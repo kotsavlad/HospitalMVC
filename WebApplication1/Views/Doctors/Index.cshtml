@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Hospital.Models.Doctor>
+
+@{
+    ViewData["Title"] = "Лікарі";
+}
+
+<br/>
+<h4>Лікарі</h4>
+<table class="table" style="margin-top: 15px">
+    <thead class="bg-success bg-opacity-25">
+    <tr>
+        <th>Код</th>
+        <th>
+            Прізвище
+        </th>
+        <th>
+            Спеціальність
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @{
+        var i = 0;
+
+        foreach (var item in Model)
+        {
+            i++;
+            <tr class="@(i % 2 == 1 ? "bg-warning bg-opacity-10" : "")">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Speciality)
+                </td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>

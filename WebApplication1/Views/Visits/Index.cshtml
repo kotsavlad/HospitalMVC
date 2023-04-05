@@ -1,0 +1,41 @@
+﻿@model System.Collections.Generic.IEnumerable<Hospital.Models.NamedVisit>
+
+@{
+    ViewBag.Title = "Прийом пацієнтів";
+    Layout = "_Layout";
+}
+
+<br/>
+<h4>@ViewBag.Title</h4>
+
+<table class="table table-striped" style="margin-top: 15px">
+    <thead class="bg-danger bg-opacity-10">
+    <tr>
+        <th>
+            Код лікаря
+        </th>
+        <th>
+            Код пацієнта
+        </th>
+        <th>
+            Дата
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DoctorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

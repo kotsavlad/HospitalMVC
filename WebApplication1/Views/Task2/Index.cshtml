@@ -1,0 +1,35 @@
+﻿@model IEnumerable<string>
+@{
+    ViewData["Title"] = "Завдання 2";
+}
+
+<br/>
+@if (Model.Any())
+{
+    <h4>Пацієнти, які були на прийомі у лікарів усіх спеціальностей</h4>
+    <br/>
+    <table class="table table-striped" style="width: 52%">
+        <thead class="bg-success bg-opacity-25">
+        <tr>
+            <th>
+                Прізвище пацієнта
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <h4>Відсутні пацієнти, які були на прийомі у лікарів усіх спеціальностей</h4>
+}

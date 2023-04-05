@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Hospital.Models.Patient>
+
+@{
+    ViewData["Title"] = "Пацієнти";
+}
+
+<br/>
+<h4>Пацієнти</h4>
+
+
+<table class="table table-striped" style="margin-top: 15px">
+    <thead class="bg-warning bg-opacity-10">
+    <tr>
+        <th>
+            Код
+        </th>
+        <th>
+            Прізвище
+        </th>
+        <th>
+            Дата народження
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
